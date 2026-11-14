@@ -1,9 +1,9 @@
-/* Pigimana — interakce
-   - hlavička při scrollu
-   - mobilní menu
-   - zvýraznění aktivní sekce v navigaci
+/* Pigi mána — interakce
+   - hlavička při scrollu, mobilní menu, aktivní položka navigace
+   - hero slider (automatické přepínání, šipky, tečky, swipe)
    - odhalování prvků při scrollu
-   - detail mýdla v dialogu
+   - detail mýdla v dialogu s galerií
+   - newsletter → e-mail
 */
 (function () {
   'use strict';
@@ -12,21 +12,10 @@
   const toggle   = document.querySelector('.nav__toggle');
   const navList  = document.getElementById('nav-list');
   const navLinks = Array.from(navList.querySelectorAll('a[href^="#"]'));
-  const darkSections = Array.from(document.querySelectorAll('.section--dark'));
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Hlavička ---------- */
-  function onScroll() {
-    const y = window.scrollY;
-    header.classList.toggle('is-scrolled', y > 24);
-
-    // Když je hlavička nad tmavou sekcí (a není „sklo“), použij světlý text
-    const top = header.offsetHeight / 2;
-    const overDark = darkSections.some(sec => {
-      const r = sec.getBoundingClientRect();
-      return r.top <= top && r.bottom >= top;
-    });
-    header.classList.toggle('on-dark', overDark && y <= 24);
-  }
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -41,66 +30,109 @@
   navLinks.forEach(a => a.addEventListener('click', () => setMenu(false)));
   window.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-  /* ---------- Aktivní sekce ---------- */
-  const sections = navLinks
-    .map(a => document.querySelector(a.getAttribute('href')))
-    .filter(Boolean);
-
+  /* ---------- Aktivní sekce + reveal ---------- */
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if ('IntersectionObserver' in window) {
     const activeObs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         navLinks.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id));
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
+    }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(s => activeObs.observe(s));
 
-    /* ---------- Reveal ---------- */
     const revealObs = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
 
+  /* ---------- Hero slider ---------- */
+  const slider = document.getElementById('hero-slider');
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dotsWrap = slider.querySelector('.slider__dots');
+    const INTERVAL = 6500;
+    let index = 0, timer = null;
+
+    const dots = slides.map((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-label', 'Snímek ' + (i + 1));
+      b.addEventListener('click', () => { go(i); restart(); });
+      dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => {
+        const active = n === index;
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', String(!active));
+      });
+      dots.forEach((d, n) => d.classList.toggle('is-current', n === index));
+    }
+    function start() { if (!reduceMotion && slides.length > 1) timer = setInterval(() => go(index + 1), INTERVAL); }
+    function stop() { clearInterval(timer); timer = null; }
+    function restart() { stop(); start(); }
+
+    slider.querySelector('.slider__arrow--prev').addEventListener('click', () => { go(index - 1); restart(); });
+    slider.querySelector('.slider__arrow--next').addEventListener('click', () => { go(index + 1); restart(); });
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : (timer || start()));
+
+    // swipe
+    let startX = null;
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { go(index + (dx < 0 ? 1 : -1)); restart(); }
+      startX = null;
+    });
+
+    go(0);
+    start();
+  }
+
   /* ---------- Detail mýdla ---------- */
-  const modal     = document.getElementById('product-modal');
-  const mFigure   = document.getElementById('modal-figure');
-  const mIndex    = document.getElementById('modal-index');
-  const mTitle    = document.getElementById('modal-title');
-  const mNotes    = document.getElementById('modal-notes');
-  const mContent  = document.getElementById('modal-content');
-  const mPrice    = document.getElementById('modal-price');
-  const mOrder    = document.getElementById('modal-order');
-  let lastFocus   = null;
+  const modal    = document.getElementById('product-modal');
+  const mFigure  = document.getElementById('modal-figure');
+  const mCat     = document.getElementById('modal-cat');
+  const mTitle   = document.getElementById('modal-title');
+  const mContent = document.getElementById('modal-content');
+  const mPrice   = document.getElementById('modal-price');
+  const mOrder   = document.getElementById('modal-order');
+  let lastFocus  = null;
 
   function openProduct(card) {
-    const img   = card.querySelector('.product__figure img');
-    const name  = card.querySelector('.product__name').textContent.trim();
-    const index = card.querySelector('.product__index').textContent.trim();
-    const notes = card.querySelector('.product__notes').innerHTML;
-    const price = card.querySelector('.product__price').textContent.trim();
+    const mainImg = card.querySelector('.product__img');
+    const name    = card.querySelector('.product__name').textContent.trim();
+    const cat     = card.querySelector('.product__cat').innerHTML;
+    const price   = card.querySelector('.product__price').textContent.trim();
     const details = card.querySelector('.product__details');
+    const gallery = card.querySelector('.product__gallery');
 
     mFigure.innerHTML = '';
     mFigure.className = 'modal__figure';
-    mFigure.style.setProperty('--tint', getComputedStyle(card).getPropertyValue('--tint'));
 
     const main = document.createElement('div');
     main.className = 'modal__main';
-    const bigImg = img.cloneNode();
-    bigImg.removeAttribute('loading');
+    const bigImg = document.createElement('img');
+    bigImg.src = mainImg.getAttribute('src');
+    bigImg.alt = mainImg.alt;
     main.appendChild(bigImg);
     mFigure.appendChild(main);
 
-    // Galerie (pokud má karta další fotografie)
-    const gallery = card.querySelector('.product__gallery');
     if (gallery) {
       const items = Array.from(gallery.querySelectorAll('img'));
       const thumbs = document.createElement('div');
@@ -120,50 +152,51 @@
         btn.type = 'button';
         btn.setAttribute('aria-label', item.alt);
         const t = document.createElement('img');
-        t.src = item.dataset.src;
-        t.alt = '';
+        t.src = item.dataset.src; t.alt = '';
         btn.appendChild(t);
         btn.addEventListener('click', () => show(item, btn));
         thumbs.appendChild(btn);
-        if (i === 0) btn.classList.add('is-current');
+        if (i === 0) show(item, btn);
       });
       mFigure.classList.add('has-thumbs');
       mFigure.appendChild(thumbs);
     }
 
-    mIndex.textContent = 'Mýdlo ' + index;
+    mCat.innerHTML = cat;
     mTitle.textContent = name;
-    mNotes.innerHTML   = notes;
     mContent.innerHTML = details.innerHTML;
     mPrice.textContent = price;
 
-    const subject = encodeURIComponent('Objednávka mýdla: ' + name);
-    const body    = encodeURIComponent('Dobrý den,\n\nmám zájem o mýdlo „' + name + '“.\n\nPočet kusů:\nJméno:\nAdresa:\n\nDěkuji.');
+    const subject = encodeURIComponent('Objednávka: ' + name);
+    const body = encodeURIComponent('Dobrý den,\n\nmám zájem o „' + name + '“.\n\nPočet kusů:\nJméno:\nAdresa:\n\nDěkuji.');
     mOrder.href = 'mailto:ahoj@pigimana.cz?subject=' + subject + '&body=' + body;
 
     lastFocus = document.activeElement;
-    if (typeof modal.showModal === 'function') {
-      modal.showModal();
-    } else {
-      modal.setAttribute('open', '');
-    }
+    if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
     document.body.style.overflow = 'hidden';
     modal.querySelector('.modal__close').focus();
   }
-
   function closeProduct() {
     if (modal.open) modal.close(); else modal.removeAttribute('open');
     document.body.style.overflow = '';
     if (lastFocus) lastFocus.focus();
   }
-
-  document.querySelectorAll('.product__open').forEach(btn => {
-    btn.addEventListener('click', () => openProduct(btn.closest('.product')));
-  });
+  document.querySelectorAll('.product__open').forEach(btn => btn.addEventListener('click', () => openProduct(btn.closest('.product'))));
   modal.querySelector('.modal__close').addEventListener('click', closeProduct);
   modal.addEventListener('click', e => { if (e.target === modal) closeProduct(); });
   modal.addEventListener('close', () => { document.body.style.overflow = ''; });
   modal.addEventListener('cancel', e => { e.preventDefault(); closeProduct(); });
+
+  /* ---------- Newsletter (zatím přes e-mail) ---------- */
+  const newsletter = document.getElementById('newsletter');
+  if (newsletter) {
+    newsletter.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = newsletter.querySelector('input').value.trim();
+      const body = encodeURIComponent('Dobrý den,\n\nrád/a bych dostával/a novinky Pigi mána na adresu ' + email + '.\n\nDěkuji.');
+      window.location.href = 'mailto:ahoj@pigimana.cz?subject=' + encodeURIComponent('Novinky Pigi mána') + '&body=' + body;
+    });
+  }
 
   /* ---------- Rok v patičce ---------- */
   const year = document.getElementById('year');

@@ -31,7 +31,14 @@ PHOTOS = {
     "Ručně krájené šalvějové mýdlo s rozmarýnem-1.png":     "salvej-vyrez.webp",
     "Mramorované mýdlo s kakaem a ovsem-3.png":             "kakao-vyrez.webp",
     "Řemeslné medové mýdlo s měsíčkem-2.png":               "med-vyrez.webp",
-    "Pět ručně krájených mýdel v přírodních tónech-4.png":  "kolekce-vyrez.webp",   # hero
+    "Pět ručně krájených mýdel v přírodních tónech-4.png":  "kolekce-vyrez.webp",   # dárková sada
+    # fotografie s etiketou (obal)
+    "Ručně vyráběné levandulové mýdlo-3.png":  "baleni-levandule.jpg",
+    "Ručně vyráběné mýdlo s rozmarýnem-2.png": "baleni-rozmaryn.jpg",
+    "Ručně vyrobené růžové mýdlo-5.png":       "baleni-ruze.jpg",
+    "Ručně vyráběné kakaové mýdlo-6.png":      "baleni-kakao.jpg",
+    "Ručně vyrobené propolisové mýdlo-4.png":  "baleni-propolis.jpg",
+    "Řada pěti českých přírodních mýdel-1.png": "rada.jpg",                     # hero
 }
 
 def cutout(im, max_w=1200):
@@ -46,6 +53,7 @@ def cutout(im, max_w=1200):
     return im
 
 def scene(im, max_w=1600):
+    max_w = 2200 if im.width > 2000 else max_w
     im = ImageOps.exif_transpose(im).convert("RGB")
     if im.width > max_w:
         im = im.resize((max_w, round(im.height * max_w / im.width)), Image.LANCZOS)

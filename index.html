@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pigimana — Ručně vyráběná mýdla za studena</title>
-  <meta name="description" content="Přírodní mýdla vyráběná za studena z olivového, kokosového a dalších rostlinných olejů. Bez přidaného glycerinu, bez syntetických vůní. Mýdlo jako každodenní rituál.">
-  <meta property="og:title" content="Pigimana — Ručně vyráběná mýdla za studena">
-  <meta property="og:description" content="Očistit tělo. Pohladit duši. 100 % přírodní mýdla vyráběná pomalou metodou za studena.">
+  <title>Pigi mána — Ručně vyrobená mýdla za studena</title>
+  <meta name="description" content="Pigi mána: ručně vyrobená přírodní mýdla za studena z České republiky. Levandule, Rozmarýn, Růže, Kakao a Propolis. Bez přidaného glycerinu, bez syntetických vůní.">
+  <meta property="og:title" content="Pigi mána — Ručně vyrobená mýdla za studena">
+  <meta property="og:description" content="Pět přírodních mýdel z jedné dílny. Výroba za studena, jen rostlinné oleje, esenciální oleje a byliny.">
+  <meta property="og:image" content="img/rada.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Open+Sans:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,108 +20,105 @@
 <a class="skip" href="#mydla">Přeskočit na obsah</a>
 
 <header class="site-header" id="top">
-  <div class="wrap site-header__inner">
-    <a class="brand" href="#top" aria-label="Pigimana — domů">
-      <span class="brand__mark" aria-hidden="true"></span>
-      <span class="brand__name">Pigimana</span>
-    </a>
+  <div class="container site-header__inner">
+    <a class="brand" href="#top">Pigi mána</a>
 
     <nav class="nav" aria-label="Hlavní navigace">
-      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list">
-        <span class="nav__toggle-line"></span>
-        <span class="nav__toggle-line"></span>
-        <span class="sr-only">Menu</span>
-      </button>
       <ul class="nav__list" id="nav-list">
         <li><a href="#mydla">Mýdla</a></li>
-        <li><a href="#ritual">Rituál</a></li>
+        <li><a href="#pribeh">Příběh</a></li>
         <li><a href="#proces">Proces</a></li>
         <li><a href="#slozeni">Složení</a></li>
-        <li><a href="#pribeh">Příběh</a></li>
-        <li><a href="#kontakt" class="nav__cta">Kontakt</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
+
+    <div class="site-header__tools">
+      <a class="icon-link" href="https://instagram.com/pigimana" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
+      </a>
+      <a class="icon-link" href="mailto:ahoj@pigimana.cz" aria-label="Napsat e-mail">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      </a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="wrap hero__inner">
-      <div class="hero__text">
-        <p class="eyebrow reveal">Ručně vyráběná mýdla &middot; Výroba za studena</p>
-        <h1 class="hero__title reveal">Očistit tělo.<br><em>Pohladit duši.</em></h1>
-        <p class="hero__lead reveal">Přírodní mýdla z pečlivě vybraných rostlinných olejů a másel, vyráběná pomalou metodou za&nbsp;studena. Bez přidaného glycerinu, bez syntetických vůní. Jen to, co má smysl.</p>
-        <div class="hero__actions reveal">
-          <a class="btn btn--primary" href="#mydla">Prohlédnout mýdla</a>
-          <a class="btn btn--ghost" href="#proces">Jak vznikají</a>
-        </div>
-      </div>
-      <div class="hero__visual reveal" aria-hidden="true">
-        <div class="hero__halo"></div>
-        <img class="hero__soap" src="img/kolekce-vyrez.webp" alt="" width="1500" height="1000" fetchpriority="high">
-        <p class="hero__caption"><span>Kolekce</span> Pět mýdel, jedna dílna</p>
-      </div>
-    </div>
-    <a class="hero__scroll" href="#hodnoty" aria-label="Posunout dolů"><span></span></a>
-  </section>
+  <!-- ============ HERO SLIDER ============ -->
+  <section class="hero" aria-label="Úvod">
+    <div class="slider" id="hero-slider">
+      <div class="slider__track">
 
-  <!-- ============ HODNOTY ============ -->
-  <section class="values" id="hodnoty" aria-label="Zásady">
-    <div class="wrap">
-      <ul class="values__list">
-        <li class="reveal">100 % přírodní</li>
-        <li class="reveal">Saponifikace za studena</li>
-        <li class="reveal">Bez přidaného glycerinu</li>
-        <li class="reveal">Zrání nejméně 4 týdny</li>
-        <li class="reveal">Ručně krájeno</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ MÝDLA ============ -->
-  <section class="products section" id="mydla">
-    <div class="wrap">
-      <header class="section__head reveal">
-        <p class="eyebrow">Kolekce</p>
-        <h2>Pět mýdel, pět nálad.</h2>
-        <p class="section__lead">Každé mýdlo je samostatná receptura, laděná měsíce. Vybírejte podle pokožky, vůně nebo podle toho, jaký den máte před sebou.</p>
-      </header>
-
-      <div class="products__grid">
-
-        <article class="product reveal" data-tint="rose">
-          <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure product__figure--photo"><img src="img/ruze-vyrez.webp" alt="Mýdlo Růžová zahrada – krémový kousek s mramorováním z růžového jílu a sušenými okvětními lístky růže" loading="lazy" width="1200" height="925"></span>
-            <span class="product__meta">
-              <span class="product__index">01</span>
-              <span class="product__name">Růžová zahrada</span>
-              <span class="product__notes">geránium &middot; růžový absolut &middot; okvětní lístky růže</span>
-              <span class="product__price">185 Kč</span>
-            </span>
-          </button>
-          <div class="product__details" hidden>
-            <p class="product__desc">Krémová vrstva s jemným mramorováním z růžového jílu, spodní vrstva sytější, nahoře sušené okvětní lístky růže. Jemné, květinové a trochu slavnostní. Hedvábí dodává pěně sametový pocit. Mýdlo pro chvíle, kdy si chcete udělat radost.</p>
-            <dl class="product__facts">
-              <div><dt>Vůně</dt><dd>Geránium, růžový absolut</dd></div>
-              <div><dt>Pokožka</dt><dd>Normální až suchá</dd></div>
-              <div><dt>Hmotnost</dt><dd>cca 100 g</dd></div>
-            </dl>
-            <h4>Složení</h4>
-            <p class="product__ingredients">Olivový olej, slunečnicový olej, kokosový olej, bambucké máslo, bio jojobový olej, růžová voda, hydroxid sodný, makadamiový olej, hedvábí, růžový jíl, žlutý oxid, zlatá mika, sušené okvětní lístky růže, směs esenciálních olejů (geránium, růžový absolut).</p>
+        <article class="slide is-active" data-align="center">
+          <img class="slide__img" src="img/rada.jpg" alt="" width="2172" height="724" fetchpriority="high">
+          <div class="slide__content">
+            <p class="slide__kicker">Pigi mána</p>
+            <h1 class="slide__title">Mýdla za studena</h1>
+            <p class="slide__text">Pět přírodních mýdel z jedné malé dílny. Ručně vyrobeno v České republice.</p>
+            <a class="btn" href="#mydla">Prohlédnout mýdla</a>
           </div>
         </article>
 
-        <article class="product reveal" data-tint="lavender">
+        <article class="slide" data-align="left">
+          <img class="slide__img" src="img/levandule-kamen.jpg" alt="" width="1448" height="1086" loading="lazy">
+          <div class="slide__content">
+            <p class="slide__kicker">Rituál</p>
+            <h2 class="slide__title">Pro tělo i duši</h2>
+            <p class="slide__text">Hustá krémová pěna, vůně esenciálních olejů a pár minut denně, které patří jen vám.</p>
+            <a class="btn" href="#pribeh">Náš příběh</a>
+          </div>
+        </article>
+
+        <article class="slide" data-align="right">
+          <img class="slide__img" src="img/levandule-krajeni.jpg" alt="" width="1536" height="1024" loading="lazy">
+          <div class="slide__content">
+            <p class="slide__kicker">Proces</p>
+            <h2 class="slide__title">Ručně krájeno</h2>
+            <p class="slide__text">Každý kousek zraje nejméně čtyři týdny a žádné dva nejsou úplně stejné.</p>
+            <a class="btn" href="#proces">Jak vznikají</a>
+          </div>
+        </article>
+
+      </div>
+      <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Předchozí snímek"></button>
+      <button class="slider__arrow slider__arrow--next" type="button" aria-label="Další snímek"></button>
+      <div class="slider__dots" role="tablist" aria-label="Snímky"></div>
+    </div>
+  </section>
+
+  <!-- ============ HODNOTY ============ -->
+  <section class="values" aria-label="Zásady">
+    <ul class="container values__list">
+      <li>100 % přírodní</li>
+      <li>Výroba za studena</li>
+      <li>Bez přidaného glycerinu</li>
+      <li>Ručně krájeno</li>
+      <li>Česká republika</li>
+    </ul>
+  </section>
+
+  <!-- ============ MÝDLA ============ -->
+  <section class="shop" id="mydla">
+    <div class="container">
+      <div class="grid">
+
+        <article class="tile product reveal" id="levandule">
           <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure product__figure--photo"><img src="img/levandule-vyrez-krajka.webp" alt="Mýdlo Levandulový podvečer – dvouvrstvý kousek s krajkovým reliéfem a květy levandule" loading="lazy" width="1200" height="978"></span>
-            <span class="product__meta">
-              <span class="product__index">02</span>
-              <span class="product__name">Levandulový podvečer</span>
-              <span class="product__notes">levandule &middot; cedr &middot; krajkový reliéf</span>
+            <span class="product__media">
+              <img class="product__img" src="img/levandule-vyrez-krajka.webp" alt="Mýdlo Levandule – dvouvrstvý kousek s krajkovým reliéfem a květy levandule" width="1200" height="978" loading="lazy">
+              <img class="product__img product__img--alt" src="img/baleni-levandule.jpg" alt="" width="1346" height="1168" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Levandule</span>
+              <span class="product__cat">Večerní &middot; uklidňující</span>
               <span class="product__price">165 Kč</span>
             </span>
+            <span class="product__cta">Zobrazit detail</span>
           </button>
           <div class="product__details" hidden>
             <p class="product__desc">Dvouvrstvé večerní mýdlo. Horní vrstva s květy levandule, spodní tmavá vrstva s jemným otiskem krajky. Levandule a špetka cedrového dřeva zpomalí den a připraví vás na spánek.</p>
@@ -133,47 +131,86 @@
             <p class="product__ingredients">Olivový olej, kokosový olej, bambucké máslo, ricinový olej, mandlový olej, destilovaná voda, hydroxid sodný, indigo, sušené květy levandule, směs esenciálních olejů (levandule, cedrové dřevo).</p>
           </div>
           <div class="product__gallery" hidden>
+            <img data-src="img/baleni-levandule.jpg" data-kind="photo" alt="Mýdlo Levandule s papírovou etiketou Pigi mána">
             <img data-src="img/levandule-vyrez-krajka.webp" data-kind="cutout" alt="Krajkový reliéf na tmavé vrstvě mýdla">
             <img data-src="img/levandule-vyrez-3.webp" data-kind="cutout" alt="Horní vrstva s květy levandule">
-            <img data-src="img/levandule-vyrez-2.webp" data-kind="cutout" alt="Boční pohled na dvě vrstvy mýdla">
             <img data-src="img/levandule-platno.jpg" data-kind="photo" alt="Mýdlo na lněném plátně s větvičkami levandule">
             <img data-src="img/levandule-koupelna.jpg" data-kind="photo" alt="Mýdlo na keramické misce u umyvadla">
-            <img data-src="img/levandule-vyrez-4.webp" data-kind="cutout" alt="Detail povrchu mýdla s levandulí">
             <img data-src="img/levandule-kamen.jpg" data-kind="photo" alt="Mýdlo na travertinu s větvičkami levandule">
+            <img data-src="img/levandule-baleni.jpg" data-kind="photo" alt="Mýdlo zabalené v hnědém papíru s provázkem">
           </div>
         </article>
 
-        <article class="product reveal" data-tint="forest">
+        <article class="tile product reveal" id="rozmaryn">
           <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure product__figure--photo"><img src="img/salvej-vyrez.webp" alt="Mýdlo Šalvěj a rozmarýn – dvoubarevný zelený kousek se snítkami rozmarýnu" loading="lazy" width="1018" height="999"></span>
-            <span class="product__meta">
-              <span class="product__index">03</span>
-              <span class="product__name">Šalvěj a rozmarýn</span>
-              <span class="product__notes">šalvěj &middot; rozmarýn &middot; dvě vrstvy</span>
+            <span class="product__media">
+              <img class="product__img" src="img/salvej-vyrez.webp" alt="Mýdlo Rozmarýn – dvoubarevný zelený kousek se snítkami rozmarýnu" width="1018" height="999" loading="lazy">
+              <img class="product__img product__img--alt" src="img/baleni-rozmaryn.jpg" alt="" width="1254" height="1254" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Rozmarýn</span>
+              <span class="product__cat">Svěží &middot; bylinné</span>
               <span class="product__price">165 Kč</span>
             </span>
+            <span class="product__cta">Zobrazit detail</span>
           </button>
           <div class="product__details" hidden>
-            <p class="product__desc">Svěží bylinné mýdlo ve dvou odstínech zelené. Horní světlejší vrstva se snítkami rozmarýnu, spodní tmavší s jemným mramorováním. Šalvěj a rozmarýn probouzejí a šetrně čistí smíšenou pokožku. Jako zahrada po dešti.</p>
+            <p class="product__desc">Svěží bylinné mýdlo ve dvou odstínech zelené. Horní světlejší vrstva se snítkami rozmarýnu, spodní tmavší s jemným mramorováním. Rozmarýn probouzí a šetrně čistí smíšenou pokožku. Jako zahrada po dešti.</p>
             <dl class="product__facts">
-              <div><dt>Vůně</dt><dd>Šalvěj, rozmarýn, eukalyptus</dd></div>
+              <div><dt>Vůně</dt><dd>Rozmarýn, šalvěj, eukalyptus</dd></div>
               <div><dt>Pokožka</dt><dd>Smíšená až mastná</dd></div>
               <div><dt>Hmotnost</dt><dd>cca 100 g</dd></div>
             </dl>
             <h4>Složení</h4>
-            <p class="product__ingredients">Olivový olej, kokosový olej, slunečnicový olej, kakaové máslo, konopný olej, šalvějový odvar, hydroxid sodný, francouzský zelený jíl, spirulina, sušený rozmarýn, směs esenciálních olejů (šalvěj, rozmarýn, eukalyptus).</p>
+            <p class="product__ingredients">Olivový olej, kokosový olej, slunečnicový olej, kakaové máslo, konopný olej, rozmarýnový odvar, hydroxid sodný, francouzský zelený jíl, spirulina, sušený rozmarýn, směs esenciálních olejů (rozmarýn, šalvěj, eukalyptus).</p>
+          </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/baleni-rozmaryn.jpg" data-kind="photo" alt="Mýdlo Rozmarýn s papírovou etiketou Pigi mána">
+            <img data-src="img/salvej-vyrez.webp" data-kind="cutout" alt="Mýdlo Rozmarýn bez obalu">
           </div>
         </article>
 
-        <article class="product reveal" data-tint="coffee">
+        <article class="tile product reveal" id="ruze">
           <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure product__figure--photo"><img src="img/kakao-vyrez.webp" alt="Mýdlo Kakao a oves – hnědě mramorovaný kousek s ovesnými vločkami" loading="lazy" width="1167" height="942"></span>
-            <span class="product__meta">
-              <span class="product__index">04</span>
-              <span class="product__name">Kakao a oves</span>
-              <span class="product__notes">kakao &middot; oves &middot; mramorování</span>
+            <span class="product__media">
+              <img class="product__img" src="img/ruze-vyrez.webp" alt="Mýdlo Růže – krémový kousek s mramorováním z růžového jílu a okvětními lístky růže" width="1200" height="925" loading="lazy">
+              <img class="product__img product__img--alt" src="img/baleni-ruze.jpg" alt="" width="1428" height="1101" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Růže</span>
+              <span class="product__cat">Květinové &middot; pečující</span>
+              <span class="product__price">185 Kč</span>
+            </span>
+            <span class="product__cta">Zobrazit detail</span>
+          </button>
+          <div class="product__details" hidden>
+            <p class="product__desc">Krémová vrstva s jemným mramorováním z růžového jílu, spodní vrstva sytější, nahoře sušené okvětní lístky růže. Jemné, květinové a trochu slavnostní. Hedvábí dodává pěně sametový pocit. Mýdlo pro chvíle, kdy si chcete udělat radost.</p>
+            <dl class="product__facts">
+              <div><dt>Vůně</dt><dd>Geránium, růžový absolut</dd></div>
+              <div><dt>Pokožka</dt><dd>Normální až suchá</dd></div>
+              <div><dt>Hmotnost</dt><dd>cca 100 g</dd></div>
+            </dl>
+            <h4>Složení</h4>
+            <p class="product__ingredients">Olivový olej, slunečnicový olej, kokosový olej, bambucké máslo, bio jojobový olej, růžová voda, hydroxid sodný, makadamiový olej, hedvábí, růžový jíl, žlutý oxid, zlatá mika, sušené okvětní lístky růže, směs esenciálních olejů (geránium, růžový absolut).</p>
+          </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/baleni-ruze.jpg" data-kind="photo" alt="Mýdlo Růže s papírovou etiketou Pigi mána">
+            <img data-src="img/ruze-vyrez.webp" data-kind="cutout" alt="Dva kousky mýdla Růže bez obalu">
+          </div>
+        </article>
+
+        <article class="tile product reveal" id="kakao">
+          <button class="product__open" type="button" aria-haspopup="dialog">
+            <span class="product__media">
+              <img class="product__img" src="img/kakao-vyrez.webp" alt="Mýdlo Kakao – hnědě mramorovaný kousek s ovesnými vločkami" width="1167" height="942" loading="lazy">
+              <img class="product__img product__img--alt" src="img/baleni-kakao.jpg" alt="" width="1396" height="1127" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Kakao</span>
+              <span class="product__cat">Hřejivé &middot; jemný peeling</span>
               <span class="product__price">175 Kč</span>
             </span>
+            <span class="product__cta">Zobrazit detail</span>
           </button>
           <div class="product__details" hidden>
             <p class="product__desc">Mramorované mýdlo s kakaem a ovsem. Jemný peeling z mletých ovesných vloček a kakaové máslo, které na pokožce zanechá tenký ochranný film. Voní hřejivě a sladce, jako horká čokoláda.</p>
@@ -185,104 +222,121 @@
             <h4>Složení</h4>
             <p class="product__ingredients">Olivový olej, kokosový olej, kakaové máslo, bambucké máslo, ricinový olej, ovesný nálev, hydroxid sodný, kakaový prášek, jemně mleté ovesné vločky, celé ovesné vločky na povrch, kakaový absolut.</p>
           </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/baleni-kakao.jpg" data-kind="photo" alt="Mýdlo Kakao s papírovou etiketou Pigi mána">
+            <img data-src="img/kakao-vyrez.webp" data-kind="cutout" alt="Mýdlo Kakao bez obalu">
+          </div>
         </article>
 
-        <article class="product reveal" data-tint="honey">
+        <article class="tile tile--promo reveal">
+          <div class="promo__text">
+            <p class="kicker">Rituál</p>
+            <h3 class="promo__title">Pro tělo i duši</h3>
+            <p>Namočit, nadechnout se, opláchnout. Pár minut denně, které obyčejné ráno promění v malý obřad.</p>
+            <a class="link" href="#pribeh">Zjistit více</a>
+          </div>
+          <img class="promo__img" src="img/levandule-ruka.jpg" alt="" width="1448" height="1086" loading="lazy">
+        </article>
+
+        <article class="tile product reveal" id="propolis">
           <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure product__figure--photo"><img src="img/med-vyrez.webp" alt="Mýdlo Med a měsíček – medově zlatý kousek s krajkovým reliéfem a sušenými květy měsíčku" loading="lazy" width="1200" height="912"></span>
-            <span class="product__meta">
-              <span class="product__index">05</span>
-              <span class="product__name">Med a měsíček</span>
-              <span class="product__notes">bez vůně &middot; med &middot; krajkový reliéf</span>
+            <span class="product__media">
+              <img class="product__img" src="img/med-vyrez.webp" alt="Mýdlo Propolis – medově zlatý kousek s krajkovým reliéfem a květy měsíčku" width="1200" height="912" loading="lazy">
+              <img class="product__img product__img--alt" src="img/baleni-propolis.jpg" alt="" width="1438" height="1093" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Propolis</span>
+              <span class="product__cat">Zklidňující &middot; citlivá pokožka</span>
               <span class="product__price">155 Kč</span>
             </span>
+            <span class="product__cta">Zobrazit detail</span>
           </button>
           <div class="product__details" hidden>
-            <p class="product__desc">Medové mýdlo s krajkovým reliéfem a sušenými květy měsíčku. Bez přidaných esenciálních olejů, jen jemná vůně medu. Pro citlivou pokožku, děti a všechny, kdo chtějí jen čisté mýdlo. Med zvlhčuje, měsíček zklidňuje.</p>
+            <p class="product__desc">Propolisové mýdlo s krajkovým reliéfem a sušenými květy měsíčku. Propolis zklidňuje a podporuje regeneraci, měsíček hladí. Bez esenciálních olejů, jen jemná pryskyřičná vůně propolisu. Pro citlivou a podrážděnou pokožku.</p>
             <dl class="product__facts">
-              <div><dt>Vůně</dt><dd>Neparfemované, přirozeně medové</dd></div>
-              <div><dt>Pokožka</dt><dd>Citlivá, dětská</dd></div>
+              <div><dt>Vůně</dt><dd>Přirozená, propolisová</dd></div>
+              <div><dt>Pokožka</dt><dd>Citlivá, podrážděná</dd></div>
               <div><dt>Hmotnost</dt><dd>cca 100 g</dd></div>
             </dl>
             <h4>Složení</h4>
-            <p class="product__ingredients">Olivový olej macerovaný měsíčkem, kokosový olej, bambucké máslo, mandlový olej, ricinový olej, měsíčkový nálev, hydroxid sodný, med z místních včelstev, sušené květy měsíčku.</p>
+            <p class="product__ingredients">Olivový olej macerovaný měsíčkem, kokosový olej, bambucké máslo, mandlový olej, ricinový olej, destilovaná voda, hydroxid sodný, propolisová tinktura, med, sušené květy měsíčku.</p>
+          </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/baleni-propolis.jpg" data-kind="photo" alt="Mýdlo Propolis s papírovou etiketou Pigi mána">
+            <img data-src="img/med-vyrez.webp" data-kind="cutout" alt="Dva kousky mýdla Propolis bez obalu">
+          </div>
+        </article>
+
+        <article class="tile product reveal" id="sada">
+          <button class="product__open" type="button" aria-haspopup="dialog">
+            <span class="product__media">
+              <img class="product__img" src="img/kolekce-vyrez.webp" alt="Dárková sada – všech pět mýdel Pigi mána" width="1500" height="996" loading="lazy">
+            </span>
+            <span class="product__info">
+              <span class="product__name">Dárková sada</span>
+              <span class="product__cat">Všech pět mýdel</span>
+              <span class="product__price">790 Kč</span>
+            </span>
+            <span class="product__cta">Zobrazit detail</span>
+          </button>
+          <div class="product__details" hidden>
+            <p class="product__desc">Levandule, Rozmarýn, Růže, Kakao a Propolis v jedné krabičce. Každé mýdlo s vlastní papírovou etiketou, zabalené do hnědého papíru a převázané provázkem. Dárek, který voní dřív, než ho rozbalíte.</p>
+            <dl class="product__facts">
+              <div><dt>Obsah</dt><dd>5 × cca 100 g</dd></div>
+              <div><dt>Balení</dt><dd>Papír, provázek, bez plastu</dd></div>
+              <div><dt>Na přání</dt><dd>Ručně psané věnování</dd></div>
+            </dl>
+            <h4>Složení</h4>
+            <p class="product__ingredients">Viz jednotlivá mýdla. Všechna jsou vyrobená za studena z rostlinných olejů, bez přidaného glycerinu a syntetických vůní.</p>
+          </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/rada.jpg" data-kind="photo" alt="Řada pěti mýdel Pigi mána s etiketami">
+            <img data-src="img/kolekce-vyrez.webp" data-kind="cutout" alt="Pět mýdel bez obalu">
+            <img data-src="img/levandule-baleni.jpg" data-kind="photo" alt="Mýdlo zabalené v papíru s provázkem">
           </div>
         </article>
 
       </div>
-
-      <p class="products__note reveal">Mýdla vznikají v malých sériích a každý kousek je ručně krájený, proto se tvar, odstín i hmotnost mohou drobně lišit. Právě to je na nich to krásné.</p>
     </div>
   </section>
 
-  <!-- ============ RITUÁL ============ -->
-  <section class="ritual section section--dark" id="ritual">
-    <div class="wrap">
-      <div class="ritual__grid">
-        <div class="ritual__text">
-          <p class="eyebrow reveal">Rituál</p>
-          <h2 class="reveal">Pár minut denně, které patří jen vám.</h2>
-          <p class="reveal">Mytí nemusí být jen rutina. Vůně esenciálních olejů, hustá krémová pěna a hladký kousek mýdla v dlani dokážou obyčejné ráno proměnit v malý obřad. Zpomalit, nadechnout se, být chvíli přítomný.</p>
-          <p class="reveal">Naše mýdla jsou vyrobená tak, aby tento okamžik trval. Dlouho drží tvar, pomalu se rozpouštějí a pokožku zanechávají měkkou, ne staženou.</p>
-        </div>
-        <ol class="ritual__steps">
-          <li class="reveal">
-            <span class="ritual__num">I.</span>
-            <h3>Namočte</h3>
-            <p>Nechte mýdlo chvíli nasát vodu. Pěna přijde sama, bez spěchu.</p>
-          </li>
-          <li class="reveal">
-            <span class="ritual__num">II.</span>
-            <h3>Nadechněte se</h3>
-            <p>Esenciální oleje pracují s dechem, ne proti němu. Vnímejte vůni, než se rozplyne.</p>
-          </li>
-          <li class="reveal">
-            <span class="ritual__num">III.</span>
-            <h3>Opláchněte</h3>
-            <p>Pokožka zůstane vláčná a přirozeně vyživená. Žádný film, žádné stažení.</p>
-          </li>
-        </ol>
-      </div>
-      <figure class="ritual__photo reveal">
-        <img src="img/levandule-ruka.jpg" alt="Kousek levandulového mýdla v dlani nad umyvadlem" loading="lazy" width="1448" height="1086">
-        <figcaption>Hladký kousek v dlani, hustá pěna, vůně levandule. Malý obřad každého rána.</figcaption>
-      </figure>
+  <!-- ============ PŘÍBĚH ============ -->
+  <section class="intro" id="pribeh">
+    <div class="container intro__inner reveal">
+      <p class="kicker">Náš příběh</p>
+      <h2>Z kuchyně do dílny</h2>
+      <p>Začalo to zvědavostí a jedním litrem olivového oleje. Dnes vznikají mýdla Pigi mána v malé domácí dílně, v sériích po pár desítkách kusů, s recepturami laděnými celé měsíce. Nejsme továrna a nechceme být. Každý kousek projde rukama, očima a nosem, než se dostane k vám.</p>
+      <p>Mytí nemusí být jen rutina. Vůně esenciálních olejů, hustá krémová pěna a hladký kousek mýdla v dlani dokážou obyčejné ráno proměnit v malý obřad. Naše mýdla jsou vyrobená tak, aby tento okamžik trval: dlouho drží tvar, pomalu se rozpouštějí a pokožku zanechávají měkkou, ne staženou.</p>
+      <a class="btn btn--outline" href="#proces">Jak vznikají</a>
     </div>
   </section>
 
   <!-- ============ PROCES ============ -->
-  <section class="process section" id="proces">
-    <div class="wrap">
-      <div class="process__intro">
-        <header class="section__head reveal">
-          <p class="eyebrow">Proces</p>
-          <h2>Pomalu, za studena, bez zkratek.</h2>
-          <p class="section__lead">Metoda za studena je nejstarší a nejšetrnější způsob výroby mýdla. Oleje se při ní nezahřívají na vysoké teploty, a tak si zachovají vše, kvůli čemu jsme je vybrali.</p>
-        </header>
-        <figure class="process__photo reveal">
-          <img src="img/levandule-krajeni.jpg" alt="Tři ručně nakrájené kousky levandulového mýdla na kamenném podstavci" loading="lazy" width="1536" height="1024">
-          <figcaption>Ručně krájené kousky. Každý trochu jiný.</figcaption>
-        </figure>
-      </div>
-
-      <ol class="process__steps">
-        <li class="process__step reveal">
-          <span class="process__num">01</span>
+  <section class="process" id="proces">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Proces</p>
+        <h2>Pomalu, za studena</h2>
+        <p class="section-head__lead">Metoda za studena je nejstarší a nejšetrnější způsob výroby mýdla. Oleje se nezahřívají na vysoké teploty, a tak si zachovají vše, kvůli čemu jsme je vybrali.</p>
+      </header>
+      <ol class="grid grid--4 steps">
+        <li class="tile step reveal">
+          <span class="step__num">01</span>
           <h3>Oleje a másla</h3>
-          <p>Každá receptura začíná u rovnováhy: olivový olej pro jemnost, kokosový pro pěnu, bambucké máslo pro výživu. Jen rostlinné oleje a másla, žádné syntetické náhražky.</p>
+          <p>Olivový olej pro jemnost, kokosový pro pěnu, bambucké máslo pro výživu. Jen rostlinné oleje a másla, žádné syntetické náhražky.</p>
         </li>
-        <li class="process__step reveal">
-          <span class="process__num">02</span>
+        <li class="tile step reveal">
+          <span class="step__num">02</span>
           <h3>Saponifikace</h3>
-          <p>Oleje se spojí s louhem a začne zmýdelnění. Louh v procesu beze zbytku zreaguje, ve finálním mýdle už není. Žádný přidaný glycerin ani hotové mýdlové hmoty, všechno vzniká od nuly.</p>
+          <p>Oleje se spojí s louhem a začne zmýdelnění. Louh beze zbytku zreaguje, ve finálním mýdle už není. Žádný přidaný glycerin ani hotové hmoty.</p>
         </li>
-        <li class="process__step reveal">
-          <span class="process__num">03</span>
+        <li class="tile step reveal">
+          <span class="step__num">03</span>
           <h3>Forma a krájení</h3>
-          <p>Hmota tuhne v dřevěné formě 24 až 48 hodin, poté se ručně krájí. Každý kousek je proto trochu jiný. Jako věci, které dělají lidé, ne stroje.</p>
+          <p>Hmota tuhne v dřevěné formě 24 až 48 hodin, poté se ručně krájí a označí etiketou. Každý kousek je proto trochu jiný.</p>
         </li>
-        <li class="process__step reveal">
-          <span class="process__num">04</span>
+        <li class="tile step reveal">
+          <span class="step__num">04</span>
           <h3>Zrání</h3>
           <p>Mýdla odpočívají nejméně čtyři týdny. Odpaří se voda, mýdlo ztvrdne, zjemní a pěna zhoustne. Trpělivost je tajná ingredience.</p>
         </li>
@@ -291,103 +345,94 @@
   </section>
 
   <!-- ============ SLOŽENÍ ============ -->
-  <section class="ingredients section section--tint" id="slozeni">
-    <div class="wrap">
-      <header class="section__head reveal">
-        <p class="eyebrow">Složení</p>
-        <h2>Co je uvnitř. A proč.</h2>
-        <p class="section__lead">Každá položka na etiketě má svůj důvod. Tady je slovníček toho, co v našich mýdlech najdete nejčastěji.</p>
+  <section class="ingredients" id="slozeni">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="kicker">Složení</p>
+        <h2>Co je uvnitř a proč</h2>
+        <p class="section-head__lead">Každá položka na etiketě má svůj důvod. Slovníček toho, co v našich mýdlech najdete nejčastěji.</p>
       </header>
-
-      <dl class="ingredients__grid">
-        <div class="reveal"><dt>Olivový olej</dt><dd>Základ každého mýdla. Jemný, hydratační, vhodný i pro nejcitlivější pokožku.</dd></div>
-        <div class="reveal"><dt>Kokosový olej</dt><dd>Postará se o hustou, bohatou pěnu a pevnost kousku.</dd></div>
-        <div class="reveal"><dt>Bambucké máslo</dt><dd>Vyživuje a zanechává pokožku vláčnou dlouho po opláchnutí.</dd></div>
-        <div class="reveal"><dt>Jojobový olej</dt><dd>Složením blízký kožnímu mazu. Pomáhá pokožce najít rovnováhu.</dd></div>
-        <div class="reveal"><dt>Makadamiový olej</dt><dd>Lehký, rychle se vstřebává, bohatý na kyselinu palmitoolejovou.</dd></div>
-        <div class="reveal"><dt>Jíly</dt><dd>Růžový, zelený či fialový: jemně čistí a barví přirozeně, bez syntetických pigmentů.</dd></div>
-        <div class="reveal"><dt>Hedvábí</dt><dd>Peptidy hedvábí dávají pěně hladký, téměř sametový charakter.</dd></div>
-        <div class="reveal"><dt>Esenciální oleje</dt><dd>Jediný zdroj vůně. Žádné parfémové kompozice, žádné syntetické aroma.</dd></div>
-        <div class="reveal"><dt>Hydroxid sodný</dt><dd>Bez něj mýdlo nevznikne. V procesu zcela zreaguje a v hotovém mýdle už není.</dd></div>
-        <div class="reveal"><dt>Mika a oxidy</dt><dd>Minerální pigmenty v nepatrném množství. Jen pro zlatý odlesk a teplý odstín.</dd></div>
-        <div class="ingredients__photo reveal" aria-label="Fotografie: mýdlo se sušenou levandulí a bylinami v miskách">
-          <img src="img/levandule-suroviny.jpg" alt="" loading="lazy" width="1448" height="1086">
+      <dl class="grid grid--4 glossary">
+        <div class="tile reveal"><dt>Olivový olej</dt><dd>Základ každého mýdla. Jemný, hydratační, vhodný i pro nejcitlivější pokožku.</dd></div>
+        <div class="tile reveal"><dt>Kokosový olej</dt><dd>Postará se o hustou, bohatou pěnu a pevnost kousku.</dd></div>
+        <div class="tile reveal"><dt>Bambucké máslo</dt><dd>Vyživuje a zanechává pokožku vláčnou dlouho po opláchnutí.</dd></div>
+        <div class="tile reveal"><dt>Jojobový olej</dt><dd>Složením blízký kožnímu mazu. Pomáhá pokožce najít rovnováhu.</dd></div>
+        <div class="tile reveal"><dt>Jíly a indigo</dt><dd>Růžový a zelený jíl, indigo: jemně čistí a barví přirozeně, bez syntetických pigmentů.</dd></div>
+        <div class="tile reveal"><dt>Byliny a květy</dt><dd>Levandule, rozmarýn, růže, měsíček. Sušené, z větší části z vlastní zahrady.</dd></div>
+        <div class="tile reveal"><dt>Esenciální oleje</dt><dd>Jediný zdroj vůně. Žádné parfémové kompozice, žádné syntetické aroma.</dd></div>
+        <div class="tile reveal"><dt>Hydroxid sodný</dt><dd>Bez něj mýdlo nevznikne. V procesu zcela zreaguje a v hotovém mýdle už není.</dd></div>
+        <div class="tile tile--photo reveal" aria-label="Fotografie: mýdlo se sušenou levandulí a bylinami v miskách">
+          <img src="img/levandule-suroviny.jpg" alt="" width="1448" height="1086" loading="lazy">
+        </div>
+        <div class="tile tile--not reveal">
+          <dt>Co v mýdlech nenajdete</dt>
+          <dd><ul><li>Přidaný glycerin</li><li>Syntetické vůně</li><li>Konzervanty</li><li>SLS a detergenty</li><li>Umělá barviva</li></ul></dd>
         </div>
       </dl>
-
-      <div class="ingredients__not reveal">
-        <p class="eyebrow">Co v mýdlech nenajdete</p>
-        <ul>
-          <li>Přidaný glycerin</li>
-          <li>Syntetické vůně</li>
-          <li>Konzervanty</li>
-          <li>SLS a detergenty</li>
-          <li>Umělá barviva</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PŘÍBĚH ============ -->
-  <section class="story section" id="pribeh">
-    <div class="wrap story__inner">
-      <div class="story__text">
-        <p class="eyebrow reveal">Příběh</p>
-        <h2 class="reveal">Z kuchyně do dílny.</h2>
-        <p class="reveal">Začalo to zvědavostí a jedním litrem olivového oleje. Dnes vznikají mýdla v malé domácí dílně, v sériích po pár desítkách kusů, s recepturami laděnými celé měsíce.</p>
-        <p class="reveal">Nejsme továrna a nechceme být. Každý kousek projde rukama, očima a nosem, než se dostane k vám. Když se nám něco nelíbí, neprodáme to.</p>
-        <blockquote class="story__quote reveal">
-          <p>„Dobré mýdlo poznáte podle toho, že se na něj těšíte.“</p>
-        </blockquote>
-      </div>
-      <figure class="story__photo reveal">
-        <img src="img/levandule-miska.jpg" alt="Levandulové mýdlo na ručně tvarované keramické misce v koupelně" loading="lazy" width="1448" height="1086">
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ KONTAKT ============ -->
-  <section class="contact section section--dark" id="kontakt">
-    <div class="wrap contact__inner">
-      <figure class="contact__photo reveal">
-        <img src="img/levandule-baleni.jpg" alt="Mýdlo zabalené v hnědém papíru převázané provázkem" loading="lazy" width="1536" height="1024">
-      </figure>
-      <div class="reveal">
-        <p class="eyebrow">Kontakt</p>
-        <h2>Ozvěte se.</h2>
-        <p>Mýdla zatím vznikají v malých sériích. Napište, co vás zajímá. Rádi poradíme s výběrem nebo připravíme dárkové balení.</p>
-      </div>
-      <ul class="contact__links reveal">
-        <li><span>E-mail</span><a href="mailto:ahoj@pigimana.cz">ahoj@pigimana.cz</a></li>
-        <li><span>Instagram</span><a href="https://instagram.com/pigimana" rel="noopener" target="_blank">@pigimana</a></li>
-        <li><span>Dílna</span><a href="#kontakt">Praha, osobní odběr po domluvě</a></li>
-      </ul>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap site-footer__inner">
-    <p>&copy; <span id="year">2026</span> Pigimana. Ručně vyráběná mýdla za studena.</p>
-    <p class="site-footer__small">Esenciální oleje mohou u citlivých osob vyvolat reakci. Před prvním použitím vyzkoušejte na malé části pokožky.</p>
-    <a href="#top" class="site-footer__up">Nahoru ↑</a>
+<!-- ============ PATIČKA ============ -->
+<footer class="site-footer" id="kontakt">
+  <div class="container site-footer__grid">
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <p><a href="mailto:ahoj@pigimana.cz">ahoj@pigimana.cz</a><br><a href="https://instagram.com/pigimana" target="_blank" rel="noopener">@pigimana</a></p>
+      <p>Malá dílna, Praha<br>Osobní odběr po domluvě</p>
+    </div>
+    <div class="footer-col">
+      <h4>Mýdla</h4>
+      <ul>
+        <li><a href="#levandule">Levandule</a></li>
+        <li><a href="#rozmaryn">Rozmarýn</a></li>
+        <li><a href="#ruze">Růže</a></li>
+        <li><a href="#kakao">Kakao</a></li>
+        <li><a href="#propolis">Propolis</a></li>
+        <li><a href="#sada">Dárková sada</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>O nás</h4>
+      <ul>
+        <li><a href="#pribeh">Náš příběh</a></li>
+        <li><a href="#proces">Výroba za studena</a></li>
+        <li><a href="#slozeni">Složení</a></li>
+        <li><a href="mailto:ahoj@pigimana.cz?subject=Objedn%C3%A1vka">Jak objednat</a></li>
+        <li><a href="mailto:ahoj@pigimana.cz?subject=D%C3%A1rkov%C3%A9%20balen%C3%AD">Dárkové balení</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Novinky</h4>
+      <p>Nové receptury, sezónní edice a termíny trhů. Občas, ne často.</p>
+      <form class="newsletter" id="newsletter">
+        <label class="sr-only" for="newsletter-email">Váš e-mail</label>
+        <input id="newsletter-email" type="email" placeholder="Váš e-mail" required>
+        <button type="submit" aria-label="Odeslat">→</button>
+      </form>
+      <p class="site-footer__note">Esenciální oleje mohou u citlivých osob vyvolat reakci. Před prvním použitím vyzkoušejte na malé části pokožky.</p>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>&copy; <span id="year">2026</span> Pigi mána</p>
+    <p>Ručně vyrobené mýdlo &middot; Česká republika</p>
+    <a href="#top" class="to-top" aria-label="Nahoru">↑</a>
   </div>
 </footer>
 
-<!-- ============ MODAL ============ -->
+<!-- ============ DETAIL MÝDLA ============ -->
 <dialog class="modal" id="product-modal" aria-labelledby="modal-title">
   <div class="modal__inner">
     <button class="modal__close" type="button" aria-label="Zavřít">&times;</button>
     <div class="modal__figure" id="modal-figure"></div>
     <div class="modal__body">
-      <p class="eyebrow" id="modal-index"></p>
+      <p class="kicker" id="modal-cat"></p>
       <h3 class="modal__title" id="modal-title"></h3>
-      <p class="modal__notes" id="modal-notes"></p>
       <div class="modal__content" id="modal-content"></div>
       <div class="modal__footer">
         <span class="modal__price" id="modal-price"></span>
-        <a class="btn btn--primary" href="#kontakt" id="modal-order">Objednat e-mailem</a>
+        <a class="btn" href="#kontakt" id="modal-order">Objednat e-mailem</a>
       </div>
     </div>
   </div>
