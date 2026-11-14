@@ -21,7 +21,7 @@
 
 <header class="site-header" id="top">
   <div class="container site-header__inner">
-    <a class="brand" href="#top">Pigi mána</a>
+    <a class="brand" href="#top" aria-label="Pigi mána — domů"><img src="img/logo.png" alt="Pigi mána" width="1574" height="361"></a>
 
     <nav class="nav" aria-label="Hlavní navigace">
       <ul class="nav__list" id="nav-list">
@@ -49,45 +49,16 @@
 
 <main>
 
-  <!-- ============ HERO SLIDER ============ -->
+  <!-- ============ HERO ============ -->
   <section class="hero" aria-label="Úvod">
-    <div class="slider" id="hero-slider">
-      <div class="slider__track">
-
-        <article class="slide is-active" data-align="center">
-          <img class="slide__img" src="img/rada.jpg" alt="" width="2172" height="724" fetchpriority="high">
-          <div class="slide__content">
-            <p class="slide__kicker">Pigi mána</p>
-            <h1 class="slide__title">Mýdla za studena</h1>
-            <p class="slide__text">Pět přírodních mýdel z jedné malé dílny. Ručně vyrobeno v České republice.</p>
-            <a class="btn" href="#mydla">Prohlédnout mýdla</a>
-          </div>
-        </article>
-
-        <article class="slide" data-align="left">
-          <img class="slide__img" src="img/levandule-kamen.jpg" alt="" width="1448" height="1086" loading="lazy">
-          <div class="slide__content">
-            <p class="slide__kicker">Rituál</p>
-            <h2 class="slide__title">Pro tělo i duši</h2>
-            <p class="slide__text">Hustá krémová pěna, vůně esenciálních olejů a pár minut denně, které patří jen vám.</p>
-            <a class="btn" href="#pribeh">Náš příběh</a>
-          </div>
-        </article>
-
-        <article class="slide" data-align="right">
-          <img class="slide__img" src="img/levandule-krajeni.jpg" alt="" width="1536" height="1024" loading="lazy">
-          <div class="slide__content">
-            <p class="slide__kicker">Proces</p>
-            <h2 class="slide__title">Ručně krájeno</h2>
-            <p class="slide__text">Každý kousek zraje nejméně čtyři týdny a žádné dva nejsou úplně stejné.</p>
-            <a class="btn" href="#proces">Jak vznikají</a>
-          </div>
-        </article>
-
+    <div class="hero__frame">
+      <img class="hero__img" src="img/rada.jpg" alt="" width="2172" height="724" fetchpriority="high">
+      <div class="hero__content">
+        <img class="hero__logo" src="img/logo.png" alt="Pigi mána" width="1574" height="361">
+        <h1 class="hero__title">Mýdla za studena</h1>
+        <p class="hero__text">Pět přírodních mýdel z jedné malé dílny. Ručně vyrobeno v České republice.</p>
+        <a class="btn" href="#mydla">Prohlédnout mýdla</a>
       </div>
-      <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Předchozí snímek"></button>
-      <button class="slider__arrow slider__arrow--next" type="button" aria-label="Další snímek"></button>
-      <div class="slider__dots" role="tablist" aria-label="Snímky"></div>
     </div>
   </section>
 
@@ -415,7 +386,7 @@
     </div>
   </div>
   <div class="container site-footer__bottom">
-    <p>&copy; <span id="year">2026</span> Pigi mána</p>
+    <p class="site-footer__brand"><img src="img/logo.png" alt="Pigi mána" width="1574" height="361"><span>&copy; <span id="year">2026</span></span></p>
     <p>Ručně vyrobené mýdlo &middot; Česká republika</p>
     <a href="#top" class="to-top" aria-label="Nahoru">↑</a>
   </div>

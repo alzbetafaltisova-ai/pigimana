@@ -16,12 +16,13 @@ a otevřít http://localhost:8080.
 
 ## Struktura
 
-- `index.html` — veškerý obsah webu (slider, mýdla, příběh, proces, složení, patička)
+- `index.html` — veškerý obsah webu (úvod, mýdla, příběh, proces, složení, patička)
 - `css/style.css` — vzhled
-- `js/main.js` — slider, menu, animace při scrollu, detail mýdla s galerií, newsletter
+- `js/main.js` — menu, animace při scrollu, detail mýdla s galerií, newsletter
+- `img/logo.png` — logo s průhledným pozadím (hlavička, úvod, patička); zdroj `assets/originals/logo.webp`
 - `img/*-vyrez.webp` — výřezy mýdel s průhledným pozadím (dlaždice)
 - `img/baleni-*.jpg` — mýdla s papírovou etiketou (zobrazí se při najetí na dlaždici a v detailu)
-- `img/rada.jpg` — řada všech pěti mýdel (úvodní slide)
+- `img/rada.jpg` — řada všech pěti mýdel (úvodní obrázek)
 - `img/levandule-*.jpg` — aranžované scény s levandulovým mýdlem
 - `assets/originals/` — původní fotografie v plné velikosti (zdroj pro `img/`)
 - `tools/make_photos.py` — z `assets/originals` vyrobí zmenšené fotky do `img/`
