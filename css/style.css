@@ -252,7 +252,6 @@ section { padding: 40px 0; }
 .newsletter input::placeholder { color: var(--muted); }
 .newsletter button { padding: 0 6px; color: var(--ink); font-size: 18px; transition: color .3s; }
 .newsletter button:hover { color: var(--accent); }
-.site-footer__note { font-size: 12px; color: var(--muted); }
 
 .site-footer__bottom {
   display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
