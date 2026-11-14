@@ -89,10 +89,47 @@
     const details = card.querySelector('.product__details');
 
     mFigure.innerHTML = '';
+    mFigure.className = 'modal__figure';
+    mFigure.style.setProperty('--tint', getComputedStyle(card).getPropertyValue('--tint'));
+
+    const main = document.createElement('div');
+    main.className = 'modal__main';
     const bigImg = img.cloneNode();
     bigImg.removeAttribute('loading');
-    mFigure.appendChild(bigImg);
-    mFigure.style.setProperty('--tint', getComputedStyle(card).getPropertyValue('--tint'));
+    main.appendChild(bigImg);
+    mFigure.appendChild(main);
+
+    // Galerie (pokud má karta další fotografie)
+    const gallery = card.querySelector('.product__gallery');
+    if (gallery) {
+      const items = Array.from(gallery.querySelectorAll('img'));
+      const thumbs = document.createElement('div');
+      thumbs.className = 'modal__thumbs';
+      thumbs.setAttribute('role', 'tablist');
+      thumbs.setAttribute('aria-label', 'Další fotografie');
+
+      const show = (item, btn) => {
+        bigImg.src = item.dataset.src;
+        bigImg.alt = item.alt;
+        mFigure.classList.toggle('is-photo', item.dataset.kind === 'photo');
+        thumbs.querySelectorAll('button').forEach(b => b.classList.toggle('is-current', b === btn));
+      };
+
+      items.forEach((item, i) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', item.alt);
+        const t = document.createElement('img');
+        t.src = item.dataset.src;
+        t.alt = '';
+        btn.appendChild(t);
+        btn.addEventListener('click', () => show(item, btn));
+        thumbs.appendChild(btn);
+        if (i === 0) btn.classList.add('is-current');
+      });
+      mFigure.classList.add('has-thumbs');
+      mFigure.appendChild(thumbs);
+    }
 
     mIndex.textContent = 'Mýdlo ' + index;
     mTitle.textContent = name;

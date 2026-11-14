@@ -59,8 +59,10 @@
       </div>
       <div class="hero__visual reveal" aria-hidden="true">
         <div class="hero__halo"></div>
-        <img class="hero__soap" src="img/soap-ruzova-zahrada.svg" alt="" width="480" height="360">
-        <p class="hero__caption"><span>01</span> Růžová zahrada</p>
+        <figure class="hero__photo">
+          <img src="img/levandule-kamen.jpg" alt="" width="1448" height="1086" fetchpriority="high">
+        </figure>
+        <p class="hero__caption"><span>02</span> Levandulový podvečer</p>
       </div>
     </div>
     <a class="hero__scroll" href="#hodnoty" aria-label="Posunout dolů"><span></span></a>
@@ -114,23 +116,31 @@
 
         <article class="product reveal" data-tint="lavender">
           <button class="product__open" type="button" aria-haspopup="dialog">
-            <span class="product__figure"><img src="img/soap-levandulovy-podvecer.svg" alt="Mýdlo Levandulový podvečer – fialový kousek s květy levandule" loading="lazy" width="480" height="360"></span>
+            <span class="product__figure product__figure--photo"><img src="img/levandule-vyrez-krajka.webp" alt="Mýdlo Levandulový podvečer – dvouvrstvý kousek s krajkovým reliéfem a květy levandule" loading="lazy" width="1200" height="978"></span>
             <span class="product__meta">
               <span class="product__index">02</span>
               <span class="product__name">Levandulový podvečer</span>
-              <span class="product__notes">levandule &middot; cedr &middot; fialový jíl</span>
+              <span class="product__notes">levandule &middot; cedr &middot; krajkový reliéf</span>
               <span class="product__price">165 Kč</span>
             </span>
           </button>
           <div class="product__details" hidden>
-            <p class="product__desc">Uklidňující večerní mýdlo. Levandule a špetka cedrového dřeva zpomalí den a připraví vás na spánek. Sušené květy jemně zdobí každý kousek.</p>
+            <p class="product__desc">Dvouvrstvé večerní mýdlo. Horní vrstva s květy levandule, spodní tmavá vrstva s jemným otiskem krajky. Levandule a špetka cedrového dřeva zpomalí den a připraví vás na spánek.</p>
             <dl class="product__facts">
               <div><dt>Vůně</dt><dd>Levandule, cedrové dřevo</dd></div>
               <div><dt>Pokožka</dt><dd>Všechny typy</dd></div>
               <div><dt>Hmotnost</dt><dd>cca 100 g</dd></div>
             </dl>
             <h4>Složení</h4>
-            <p class="product__ingredients">Olivový olej, kokosový olej, bambucké máslo, ricinový olej, mandlový olej, destilovaná voda, hydroxid sodný, fialový brazilský jíl, sušené květy levandule, směs esenciálních olejů (levandule, cedrové dřevo).</p>
+            <p class="product__ingredients">Olivový olej, kokosový olej, bambucké máslo, ricinový olej, mandlový olej, destilovaná voda, hydroxid sodný, indigo, sušené květy levandule, směs esenciálních olejů (levandule, cedrové dřevo).</p>
+          </div>
+          <div class="product__gallery" hidden>
+            <img data-src="img/levandule-vyrez-krajka.webp" data-kind="cutout" alt="Krajkový reliéf na tmavé vrstvě mýdla">
+            <img data-src="img/levandule-vyrez-3.webp" data-kind="cutout" alt="Horní vrstva s květy levandule">
+            <img data-src="img/levandule-vyrez-2.webp" data-kind="cutout" alt="Boční pohled na dvě vrstvy mýdla">
+            <img data-src="img/levandule-platno.jpg" data-kind="photo" alt="Mýdlo na lněném plátně s větvičkami levandule">
+            <img data-src="img/levandule-koupelna.jpg" data-kind="photo" alt="Mýdlo na keramické misce u umyvadla">
+            <img data-src="img/levandule-vyrez-4.webp" data-kind="cutout" alt="Detail povrchu mýdla s levandulí">
           </div>
         </article>
 
@@ -256,17 +266,27 @@
           </li>
         </ol>
       </div>
+      <figure class="ritual__photo reveal">
+        <img src="img/levandule-ruka.jpg" alt="Kousek levandulového mýdla v dlani nad umyvadlem" loading="lazy" width="1448" height="1086">
+        <figcaption>Hladký kousek v dlani, hustá pěna, vůně levandule. Malý obřad každého rána.</figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- ============ PROCES ============ -->
   <section class="process section" id="proces">
     <div class="wrap">
-      <header class="section__head reveal">
-        <p class="eyebrow">Proces</p>
-        <h2>Pomalu, za studena, bez zkratek.</h2>
-        <p class="section__lead">Metoda za studena je nejstarší a nejšetrnější způsob výroby mýdla. Oleje se při ní nezahřívají na vysoké teploty, a tak si zachovají vše, kvůli čemu jsme je vybrali.</p>
-      </header>
+      <div class="process__intro">
+        <header class="section__head reveal">
+          <p class="eyebrow">Proces</p>
+          <h2>Pomalu, za studena, bez zkratek.</h2>
+          <p class="section__lead">Metoda za studena je nejstarší a nejšetrnější způsob výroby mýdla. Oleje se při ní nezahřívají na vysoké teploty, a tak si zachovají vše, kvůli čemu jsme je vybrali.</p>
+        </header>
+        <figure class="process__photo reveal">
+          <img src="img/levandule-krajeni.jpg" alt="Tři ručně nakrájené kousky levandulového mýdla na kamenném podstavci" loading="lazy" width="1536" height="1024">
+          <figcaption>Ručně krájené kousky. Každý trochu jiný.</figcaption>
+        </figure>
+      </div>
 
       <ol class="process__steps">
         <li class="process__step reveal">
@@ -313,6 +333,9 @@
         <div class="reveal"><dt>Esenciální oleje</dt><dd>Jediný zdroj vůně. Žádné parfémové kompozice, žádné syntetické aroma.</dd></div>
         <div class="reveal"><dt>Hydroxid sodný</dt><dd>Bez něj mýdlo nevznikne. V procesu zcela zreaguje a v hotovém mýdle už není.</dd></div>
         <div class="reveal"><dt>Mika a oxidy</dt><dd>Minerální pigmenty v nepatrném množství. Jen pro zlatý odlesk a teplý odstín.</dd></div>
+        <div class="ingredients__photo reveal" aria-label="Fotografie: mýdlo se sušenou levandulí a bylinami v miskách">
+          <img src="img/levandule-suroviny.jpg" alt="" loading="lazy" width="1448" height="1086">
+        </div>
       </dl>
 
       <div class="ingredients__not reveal">
@@ -336,16 +359,22 @@
         <h2 class="reveal">Z kuchyně do dílny.</h2>
         <p class="reveal">Začalo to zvědavostí a jedním litrem olivového oleje. Dnes vznikají mýdla v malé domácí dílně, v sériích po pár desítkách kusů, s recepturami laděnými celé měsíce.</p>
         <p class="reveal">Nejsme továrna a nechceme být. Každý kousek projde rukama, očima a nosem, než se dostane k vám. Když se nám něco nelíbí, neprodáme to.</p>
+        <blockquote class="story__quote reveal">
+          <p>„Dobré mýdlo poznáte podle toho, že se na něj těšíte.“</p>
+        </blockquote>
       </div>
-      <blockquote class="story__quote reveal">
-        <p>„Dobré mýdlo poznáte podle toho, že se na něj těšíte.“</p>
-      </blockquote>
+      <figure class="story__photo reveal">
+        <img src="img/levandule-miska.jpg" alt="Levandulové mýdlo na ručně tvarované keramické misce v koupelně" loading="lazy" width="1448" height="1086">
+      </figure>
     </div>
   </section>
 
   <!-- ============ KONTAKT ============ -->
   <section class="contact section section--dark" id="kontakt">
     <div class="wrap contact__inner">
+      <figure class="contact__photo reveal">
+        <img src="img/levandule-baleni.jpg" alt="Mýdlo zabalené v hnědém papíru převázané provázkem" loading="lazy" width="1536" height="1024">
+      </figure>
       <div class="reveal">
         <p class="eyebrow">Kontakt</p>
         <h2>Ozvěte se.</h2>
