@@ -457,22 +457,16 @@ figcaption {
 }
 .section--dark figcaption { color: rgba(246, 241, 234, .65); }
 
-.photo-frame, .hero__photo, .ritual__photo img, .process__photo img, .story__photo img, .contact__photo img, .ingredients__photo img {
+.ritual__photo img, .process__photo img, .story__photo img, .contact__photo img, .ingredients__photo img {
   border-radius: var(--radius);
 }
 
 /* Hero */
-.hero__photo {
-  position: relative; width: 100%; max-width: 620px; overflow: hidden;
-  aspect-ratio: 3 / 2;
-  box-shadow: 0 40px 60px -30px rgba(60, 40, 30, .35);
-  animation: float 9s ease-in-out infinite;
-}
-.hero__photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero__soap { max-width: 640px; filter: drop-shadow(0 34px 36px rgba(60, 40, 30, .28)); animation-duration: 9s; }
 .hero__halo { width: 90%; }
 
 /* Karta se skutečnou fotografií */
-.product__figure--photo { padding: 12% 10%; }
+.product__figure--photo { padding: 9% 8%; }
 .product__figure--photo img { filter: drop-shadow(0 22px 24px rgba(40, 30, 40, .28)); }
 
 /* Rituál */
@@ -525,7 +519,6 @@ figcaption {
   .contact__photo { grid-column: 1 / -1; max-width: 520px; }
 }
 @media (max-width: 820px) {
-  .hero__photo { max-width: 100%; }
   .process__intro { grid-template-columns: 1fr; }
   .ritual__photo img { aspect-ratio: 4 / 3; }
   .story__photo img { aspect-ratio: 4 / 3; }

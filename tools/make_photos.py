@@ -27,6 +27,11 @@ PHOTOS = {
     "Unknown-7.png": "levandule-kamen.jpg",      # na travertinu, boční světlo
     "Unknown-8.png": "levandule-krajeni.jpg",    # tři nakrájené kousky
     "Unknown-9.png": "levandule-baleni.jpg",     # zabalené v papíru s provázkem
+    "Růžově krémové mýdlo s okvětními lístky-5.png":        "ruze-vyrez.webp",
+    "Ručně krájené šalvějové mýdlo s rozmarýnem-1.png":     "salvej-vyrez.webp",
+    "Mramorované mýdlo s kakaem a ovsem-3.png":             "kakao-vyrez.webp",
+    "Řemeslné medové mýdlo s měsíčkem-2.png":               "med-vyrez.webp",
+    "Pět ručně krájených mýdel v přírodních tónech-4.png":  "kolekce-vyrez.webp",   # hero
 }
 
 def cutout(im, max_w=1200):
@@ -53,7 +58,8 @@ for src_name, out_name in PHOTOS.items():
     im = Image.open(src)
     out = OUT / out_name
     if out_name.endswith(".webp"):
-        cutout(im).save(out, quality=86, method=6)
+        max_w = 1500 if out_name.startswith("kolekce") else 1200
+        cutout(im, max_w).save(out, quality=86, method=6)
     else:
         scene(im).save(out, quality=82, optimize=True, progressive=True)
     kb = out.stat().st_size // 1024
