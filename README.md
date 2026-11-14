@@ -16,7 +16,7 @@ a otevřít http://localhost:8080.
 
 ## Struktura
 
-- `index.html` — veškerý obsah webu (úvod, mýdla, příběh, proces, složení, patička)
+- `index.html` — veškerý obsah webu (úvod, mýdla, proces, patička)
 - `css/style.css` — vzhled
 - `js/main.js` — menu, animace při scrollu, detail mýdla s galerií, newsletter
 - `img/logo.png` — logo s průhledným pozadím (hlavička, úvod, patička); zdroj `assets/originals/logo.webp`
