@@ -216,12 +216,17 @@ section { padding: 40px 0; }
 }
 .product__open:hover .product__cta, .product__open:focus-visible .product__cta { opacity: 1; transform: none; }
 
-/* Promo dlaždice (přes dva sloupce) */
-.tile--promo { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; min-height: 100%; overflow: hidden; }
-.promo__text { padding: clamp(28px, 3.5vw, 52px); align-self: center; }
+/* Promo dlaždice (přes dva sloupce): růžový podklad, výřez přetékající přes okraj */
+.tile--promo { grid-column: span 2; position: relative; overflow: hidden; background: #f9eeea; display: flex; align-items: center; min-height: 100%; }
+.promo__text { position: relative; z-index: 1; max-width: 50%; padding: clamp(28px, 3.5vw, 56px); }
 .promo__title { font-size: 24px; letter-spacing: 5px; margin-bottom: 12px; }
 .promo__text p { font-size: 14px; }
-.promo__img { width: 100%; height: 100%; object-fit: cover; min-height: 280px; }
+.promo__img {
+  position: absolute; right: -9%; bottom: -16%; width: 68%; height: auto;
+  filter: drop-shadow(0 24px 30px rgba(60, 40, 30, .22));
+  transition: transform .8s var(--ease);
+}
+.tile--promo:hover .promo__img { transform: translate(-1.5%, -2%); }
 
 /* ---------- Proces (středový text) ---------- */
 .intro { padding: 70px 0 60px; }
@@ -344,8 +349,9 @@ section { padding: 40px 0; }
   .slider__arrow { display: none; }
 
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .tile--promo { grid-column: span 2; grid-template-columns: 1fr; }
-  .promo__img { order: -1; min-height: 220px; max-height: 260px; }
+  .tile--promo { grid-column: span 2; min-height: 360px; align-items: flex-start; }
+  .promo__text { max-width: 62%; }
+  .promo__img { width: 62%; right: -12%; bottom: -10%; }
   .values__list li { padding: 0 16px; }
   .site-footer { padding-top: 56px; }
 }
@@ -355,7 +361,9 @@ section { padding: 40px 0; }
   .values__list { flex-direction: column; align-items: center; gap: 8px; }
   .values__list li + li::before { display: none; }
   .grid { grid-template-columns: 1fr; }
-  .tile--promo { grid-column: span 1; }
+  .tile--promo { grid-column: span 1; min-height: 440px; }
+  .promo__text { max-width: 100%; padding-bottom: 0; }
+  .promo__img { width: 78%; right: -14%; bottom: -8%; }
   .site-footer__grid { grid-template-columns: 1fr; gap: 32px; }
   .modal__inner { grid-template-columns: 1fr; }
   .modal__figure { min-height: 0; }
