@@ -128,7 +128,7 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--clay); }
 .site-header.on-dark:not(.is-scrolled) { color: var(--bg); }
 .site-header__inner { display: flex; align-items: center; justify-content: space-between; }
 
-.brand { display: inline-flex; align-items: center; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; position: relative; z-index: 2; }
 .brand__mark {
   width: 26px; height: 18px; border-radius: 5px;
   background: linear-gradient(135deg, #e7b8ad, #c98979);
@@ -417,7 +417,15 @@ h1 em, h2 em { font-style: italic; font-weight: 400; color: var(--clay); }
   .nav__list.is-open { opacity: 1; visibility: visible; }
   .nav__list a { font-family: var(--serif); font-size: 1.9rem; text-transform: none; letter-spacing: 0; }
   .nav__cta { border: 0 !important; padding: 0 !important; color: var(--clay); }
-  .site-header.menu-open { color: var(--ink); }
+  /* Při otevřeném menu nesmí mít hlavička backdrop-filter: stal by se
+     containing blockem pro fixed menu a ořízl by ho na výšku hlavičky. */
+  .site-header.menu-open {
+    color: var(--ink);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
 
   .hero { padding-top: 120px; min-height: auto; }
   .hero__inner { grid-template-columns: 1fr; }
