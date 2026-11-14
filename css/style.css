@@ -127,7 +127,7 @@ h4 { font-family: var(--head); color: var(--ink); text-transform: uppercase; fon
   display: grid; align-items: center;
   padding: 0 clamp(24px, 13vw, 260px);
 }
-.hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+.hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .hero__frame::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg, rgba(43, 41, 39, .68) 0%, rgba(43, 41, 39, .55) 42%, rgba(43, 41, 39, .3) 62%, rgba(43, 41, 39, 0) 86%);

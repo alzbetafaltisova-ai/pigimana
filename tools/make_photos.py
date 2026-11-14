@@ -38,7 +38,7 @@ PHOTOS = {
     "Ručně vyrobené růžové mýdlo-5.png":       "baleni-ruze.jpg",
     "Ručně vyráběné kakaové mýdlo-6.png":      "baleni-kakao.jpg",
     "Ručně vyrobené propolisové mýdlo-4.png":  "baleni-propolis.jpg",
-    "Řada pěti českých přírodních mýdel-1.png": "rada.jpg",                     # hero
+    "Řada pěti českých přírodních mýdel-1.png": "rada.jpg",                     # galerie dárkové sady
 }
 
 def cutout(im, max_w=1200):

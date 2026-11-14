@@ -22,7 +22,8 @@ a otevřít http://localhost:8080.
 - `img/logo.png` — logo s průhledným pozadím (hlavička, úvod, patička); zdroj `assets/originals/logo.webp`
 - `img/*-vyrez.webp` — výřezy mýdel s průhledným pozadím (dlaždice)
 - `img/baleni-*.jpg` — mýdla s papírovou etiketou (zobrazí se při najetí na dlaždici a v detailu)
-- `img/rada.jpg` — řada všech pěti mýdel (úvodní obrázek)
+- `img/hero.jpg` — úvodní fotografie (zdroj `assets/hero/`, další varianty tamtéž)
+- `img/rada.jpg` — řada všech pěti mýdel (galerie dárkové sady)
 - `img/levandule-*.jpg` — aranžované scény s levandulovým mýdlem
 - `assets/originals/` — původní fotografie v plné velikosti (zdroj pro `img/`)
 - `tools/make_photos.py` — z `assets/originals` vyrobí zmenšené fotky do `img/`
