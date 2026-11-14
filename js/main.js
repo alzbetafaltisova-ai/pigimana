@@ -1,5 +1,6 @@
 /* Pigi mána — interakce
    - hlavička při scrollu, mobilní menu, aktivní položka navigace
+   - hero carousel (automatické přepínání, šipky, tečky, swipe)
    - odhalování prvků při scrollu
    - detail mýdla v dialogu s galerií
    - newsletter → e-mail
@@ -48,6 +49,58 @@
     document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ---------- Hero carousel ---------- */
+  const slider = document.getElementById('hero-slider');
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dotsWrap = slider.querySelector('.slider__dots');
+    const INTERVAL = 6500;
+    let index = 0, timer = null;
+
+    const dots = slides.map((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-label', 'Snímek ' + (i + 1));
+      b.addEventListener('click', () => { go(i); restart(); });
+      dotsWrap.appendChild(b);
+      return b;
+    });
+
+    function go(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach((s, n) => {
+        const active = n === index;
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', String(!active));
+      });
+      dots.forEach((d, n) => d.classList.toggle('is-current', n === index));
+    }
+    function start() { if (!reduceMotion && slides.length > 1 && !timer) timer = setInterval(() => go(index + 1), INTERVAL); }
+    function stop() { clearInterval(timer); timer = null; }
+    function restart() { stop(); start(); }
+
+    slider.querySelector('.slider__arrow--prev').addEventListener('click', () => { go(index - 1); restart(); });
+    slider.querySelector('.slider__arrow--next').addEventListener('click', () => { go(index + 1); restart(); });
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+    let startX = null;
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', e => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { go(index + (dx < 0 ? 1 : -1)); restart(); }
+      startX = null;
+    });
+
+    go(0);
+    start();
   }
 
   /* ---------- Detail mýdla ---------- */

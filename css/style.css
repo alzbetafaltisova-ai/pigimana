@@ -119,26 +119,57 @@ h4 { font-family: var(--head); color: var(--ink); text-transform: uppercase; fon
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (carousel) ---------- */
 .hero { padding: 0 clamp(20px, 3.6vw, 72px); }
 .hero__frame {
   position: relative; overflow: hidden; background: #e8dfd4;
   height: clamp(420px, 33vw, 640px);
-  display: grid; align-items: center;
-  padding: 0 clamp(24px, 13vw, 260px);
 }
-.hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
-.hero__frame::after {
+.slider__track { position: absolute; inset: 0; }
+.slide {
+  position: absolute; inset: 0; opacity: 0; visibility: hidden;
+  transition: opacity 1.2s var(--ease), visibility 1.2s;
+  display: grid; align-items: center; padding: 0 clamp(24px, 13vw, 260px);
+}
+.slide.is-active { opacity: 1; visibility: visible; z-index: 1; }
+.hero__img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%);
+  transform: scale(1.05); transition: transform 8s linear;
+}
+.slide.is-active .hero__img { transform: scale(1); }
+/* teplý, hliněný překryv místo černého */
+.slide::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(90deg, rgba(43, 41, 39, .68) 0%, rgba(43, 41, 39, .55) 42%, rgba(43, 41, 39, .3) 62%, rgba(43, 41, 39, 0) 86%);
+  background: linear-gradient(90deg, rgba(104, 58, 42, .72) 0%, rgba(104, 58, 42, .58) 40%, rgba(104, 58, 42, .3) 62%, rgba(104, 58, 42, 0) 86%);
 }
-.hero__content { position: relative; z-index: 2; max-width: 820px; color: #fff; }
-.hero__logo { width: clamp(200px, 26vw, 480px); height: auto; margin-bottom: 14px; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .45)) drop-shadow(0 6px 18px rgba(0, 0, 0, .25)); }
+.hero__content {
+  position: relative; z-index: 2; max-width: 820px; color: #fff;
+  transform: translateY(14px); opacity: 0; transition: transform 1s var(--ease) .25s, opacity 1s var(--ease) .25s;
+}
+.slide.is-active .hero__content { transform: none; opacity: 1; }
+.hero__logo { width: clamp(200px, 26vw, 480px); height: auto; margin-bottom: 14px; filter: drop-shadow(0 2px 4px rgba(60, 30, 20, .45)) drop-shadow(0 6px 18px rgba(60, 30, 20, .25)); }
 .hero__title {
   color: #fff; font-size: clamp(32px, 3.8vw, 62px); font-weight: 600; letter-spacing: clamp(6px, .9vw, 15px);
-  line-height: 1.1; margin-bottom: 22px; text-shadow: 0 2px 6px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .25); white-space: nowrap;
+  line-height: 1.1; margin-bottom: 22px; text-shadow: 0 2px 6px rgba(60, 30, 20, .4), 0 8px 24px rgba(60, 30, 20, .25); white-space: nowrap;
 }
-.hero__text { font-size: clamp(15px, 1.25vw, 20px); font-weight: 600; line-height: 1.6; color: #fff; max-width: 480px; text-shadow: 0 1px 4px rgba(0, 0, 0, .4), 0 4px 14px rgba(0, 0, 0, .2); }
+.hero__text { font-size: clamp(15px, 1.25vw, 20px); font-weight: 600; line-height: 1.6; color: #fff; max-width: 480px; text-shadow: 0 1px 4px rgba(60, 30, 20, .4), 0 4px 14px rgba(60, 30, 20, .2); }
+
+.slider__arrow {
+  position: absolute; top: 50%; z-index: 3; width: 64px; height: 64px; transform: translateY(-50%);
+  color: #fff; opacity: .85; transition: opacity .3s; filter: drop-shadow(0 1px 4px rgba(0, 0, 0, .35));
+}
+.slider__arrow:hover { opacity: 1; }
+.slider__arrow--prev { left: clamp(6px, 3vw, 40px); }
+.slider__arrow--next { right: clamp(6px, 3vw, 40px); }
+.slider__arrow::before {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 22px; height: 22px;
+  border-left: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: translate(-35%, -50%) rotate(45deg);
+}
+.slider__arrow--next::before { transform: translate(-65%, -50%) rotate(-135deg); }
+.slider__dots { position: absolute; left: 0; right: 0; bottom: 20px; z-index: 3; display: flex; justify-content: center; gap: 10px; }
+.slider__dots button { width: 8px; height: 8px; border-radius: 50%; border: 1px solid #fff; background: transparent; opacity: .7; transition: background .3s, opacity .3s; }
+.slider__dots button.is-current { background: #fff; opacity: 1; }
 
 /* ---------- Hodnoty ---------- */
 .values { padding: 44px 0 10px; }
@@ -280,6 +311,7 @@ section { padding: 40px 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .slide, .hero__img, .hero__content { transition: none; }
 }
 
 /* ---------- Responsivita ---------- */
@@ -305,9 +337,11 @@ section { padding: 40px 0; }
   .brand img { height: 34px; }
 
   .hero { padding: 0 var(--gap); }
-  .hero__frame { height: clamp(440px, 72vh, 600px); padding: 0 22px 44px; align-items: end; }
-  .hero__frame::after { background: linear-gradient(180deg, rgba(43,41,39,0) 30%, rgba(43,41,39,.6) 100%); }
+  .hero__frame { height: clamp(440px, 72vh, 600px); }
+  .slide { padding: 0 22px 56px; align-items: end; }
+  .slide::after { background: linear-gradient(180deg, rgba(104,58,42,0) 28%, rgba(104,58,42,.7) 100%); }
   .hero__title { letter-spacing: 4px; white-space: normal; }
+  .slider__arrow { display: none; }
 
   .grid { grid-template-columns: repeat(2, 1fr); }
   .tile--promo { grid-column: span 2; grid-template-columns: 1fr; }

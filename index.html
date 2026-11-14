@@ -47,15 +47,51 @@
 
 <main>
 
-  <!-- ============ HERO ============ -->
+  <!-- ============ HERO (carousel) ============ -->
   <section class="hero" aria-label="Úvod">
-    <div class="hero__frame">
-      <img class="hero__img" src="img/hero.jpg" alt="" width="2200" height="1233" fetchpriority="high">
-      <div class="hero__content">
-        <img class="hero__logo" src="img/logo-white.png" alt="Pigi mána" width="1574" height="361">
-        <h1 class="hero__title">Mýdla za studena</h1>
-        <p class="hero__text">Pět přírodních mýdel z jedné malé dílny. Ručně vyrobeno v České republice.</p>
+    <div class="hero__frame slider" id="hero-slider" aria-roledescription="carousel">
+      <div class="slider__track">
+
+        <article class="slide is-active" style="--pos: 50% 45%">
+          <img class="hero__img" src="img/hero.jpg" alt="" width="2200" height="1233" fetchpriority="high">
+          <div class="hero__content">
+            <img class="hero__logo" src="img/logo-white.png" alt="Pigi mána" width="1574" height="361">
+            <h1 class="hero__title">Mýdla za studena</h1>
+            <p class="hero__text">Pět přírodních mýdel z jedné malé dílny. Ručně vyrobeno v České republice.</p>
+          </div>
+        </article>
+
+        <article class="slide" style="--pos: 50% 62%">
+          <img class="hero__img" src="img/rada.jpg" alt="" width="2172" height="724" loading="lazy">
+          <div class="hero__content">
+            <img class="hero__logo" src="img/logo-white.png" alt="Pigi mána" width="1574" height="361">
+            <h2 class="hero__title">Pět mýdel, jedna dílna</h2>
+            <p class="hero__text">Levandule, Rozmarýn, Růže, Kakao a Propolis. Každé s vlastní papírovou etiketou.</p>
+          </div>
+        </article>
+
+        <article class="slide" style="--pos: 55% 40%">
+          <img class="hero__img" src="img/hero-dilna.jpg" alt="" width="2200" height="1238" loading="lazy">
+          <div class="hero__content">
+            <img class="hero__logo" src="img/logo-white.png" alt="Pigi mána" width="1574" height="361">
+            <h2 class="hero__title">Kousek po kousku</h2>
+            <p class="hero__text">Každé mýdlo projde rukama, očima a nosem, než se dostane k vám.</p>
+          </div>
+        </article>
+
+        <article class="slide" style="--pos: 60% 50%">
+          <img class="hero__img" src="img/hero-suroviny.jpg" alt="" width="2200" height="1467" loading="lazy">
+          <div class="hero__content">
+            <img class="hero__logo" src="img/logo-white.png" alt="Pigi mána" width="1574" height="361">
+            <h2 class="hero__title">Jen to, co má smysl</h2>
+            <p class="hero__text">Rostlinné oleje, byliny a esenciální oleje. Nic navíc.</p>
+          </div>
+        </article>
+
       </div>
+      <button class="slider__arrow slider__arrow--prev" type="button" aria-label="Předchozí snímek"></button>
+      <button class="slider__arrow slider__arrow--next" type="button" aria-label="Další snímek"></button>
+      <div class="slider__dots" role="tablist" aria-label="Snímky"></div>
     </div>
   </section>
 
